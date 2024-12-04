@@ -1,0 +1,21 @@
+# Copyright 2022 KhulnaSoft, Ltd.
+# SPDX-License-Identifier: Apache-2.0
+
+name: Do Not Submit
+
+on:
+  pull_request:
+    branches: [ 'main', 'release-*' ]
+
+jobs:
+
+  donotsubmit:
+    name: Do Not Submit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Do Not Submit
+        uses: khulnasoft/actions/donotsubmit@main
